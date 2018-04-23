@@ -24,6 +24,9 @@ Vagrant.configure("2") do |config|
       cd ~/src/ansible-setup
     fi
 	  sudo ansible-playbook setup.yml
+    # Pause to allow the docker daemon to start, then check that docker is working
+    sleep 5
+    docker run hello-world
     mkdir -p ~/.vim/pack/thirdparty/start
     [ -d "~/.vim/pack/thirdparty/start/vim-sensible" ] || git clone https://github.com/tpope/vim-sensible.git "~/.vim/pack/thirdparty/start/vim-sensible"
     [ ! -f ~/.vim/vimrc ]  && cp /vagrant/vimrc ~/.vim/vimrc

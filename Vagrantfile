@@ -16,13 +16,16 @@ Vagrant.configure("2") do |config|
 		sudo apt-get install -y ansible
 
 		mkdir -p ~/src
-    cd ~/src
-		git clone https://github.com/sean-hunter/ansible-setup.git
-		cd ansible-setup
+		if [ -d "~/src/ansible-setup" ] ; then
+      cd ~/src/ansible-setup
+      git pull
+    else
+      git clone https://github.com/sean-hunter/ansible-setup.git ~/src/ansible-setup/
+      cd ~/src/ansible-setup
+    fi
 	  sudo ansible-playbook setup.yml
     mkdir -p ~/.vim/pack/thirdparty/start
-    cd ~/.vim/pack/thirdparty/start
-    [ -d vim-sensible ] || git clone https://github.com/tpope/vim-sensible.git
+    [ -d "~/.vim/pack/thirdparty/start/vim-sensible" ] || git clone https://github.com/tpope/vim-sensible.git "~/.vim/pack/thirdparty/start/vim-sensible"
     [ ! -f ~/.vim/vimrc ]  && cp /vagrant/vimrc ~/.vim/vimrc
     printf "\n\nDone.  To log in, do 'vagrant ssh'.  Anything in this base dir will be mounted there in /vagrant, and changes will be mirrored both ways\n\nEnjoy the software!\n"
   VAGRANT_SHELL

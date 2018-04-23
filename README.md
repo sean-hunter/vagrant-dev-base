@@ -38,7 +38,6 @@ This has the side-effect of given you a decent basic setup on your Linux box als
 brew cask install virtualbox
 brew cask install vagrant
 brew cask install vagrant-manager
-vagrant plugin install vagrant-reload
 ```
 
 I needed (on mac) to download and install the virtualbox extensions from http://download.virtualbox.org/virtualbox/5.2.8/Oracle_VM_VirtualBox_Extension_Pack-5.2.8.vbox-extpack .  To install the extensions you need to click on stuff.  You can find out how [here](https://www.swtestacademy.com/quick-start-vagrant-windows-10/) (except that you need to use the 5.2.8 package I have linked rather than the one they specify)
@@ -48,8 +47,6 @@ I needed (on mac) to download and install the virtualbox extensions from http://
 If you don't have git bash, you'll need it.  Ask the helpdesk to install Vagrant and Virtualbox 5.2.8. If you have been using docker on windows you will have Hyper-V turned on.  Sadly this is incompatible virtualbox, you (or the helpdesk) will need to turn it off.  There are instructions [here](https://derekgusoff.wordpress.com/2012/09/05/run-hyper-v-and-virtualbox-on-the-same-machine/) which claim to let you have Hyper-V and virtualbox.  I don't know if that works.
 
 You need to install the virtualbox extensions from http://download.virtualbox.org/virtualbox/5.2.8/Oracle_VM_VirtualBox_Extension_Pack-5.2.8.vbox-extpack .  To install the extensions you need to click on stuff.  You can find out how [here](https://www.swtestacademy.com/quick-start-vagrant-windows-10/) (except that you need to use the 5.2.8 package I have linked rather than the one they specify).
-
-Open a git-bash and type `vagrant plugin install vagrant-reload` . You're now good to go.
 
 
 ## FAQs
